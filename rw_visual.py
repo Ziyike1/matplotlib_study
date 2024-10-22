@@ -5,14 +5,14 @@ from random_walk import RandomWalk
 while True:
     """只要程序处于活动状态，就不断的模拟随机游走"""
     # 创建一个RandomWalk实例
-    rw = RandomWalk()
+    rw = RandomWalk(50000)
     rw.fill_walk()
 
     # 将所有的点都绘制出来
     plt.style.use('classic')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(12, 12))
     point_numbers = range(rw.num_points)
-    ax.scatter(rw.x_values, rw.y_values, s=15, c=point_numbers, cmap=plt.cm.Blues,
+    ax.scatter(rw.x_values, rw.y_values, s=1, c=point_numbers, cmap=plt.cm.Blues,
                edgecolors='none')
     ax.set_aspect('equal')
 
